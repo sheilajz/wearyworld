@@ -67,6 +67,9 @@ var playStart = function() { // starting screen has clouds and menus
             starter.frm = frameCount;
         }
     }
+	fill(0, 10, 0);
+	rect(0, high - 200, wide, 200);
+	arc(wide/2, high - 200, wide + 200, 200, PI, 2*PI);
     textFont(font, 75);
     if (((mouseX > starter.stloc.x) && (mouseX < starter.stloc.x + 150)) && ((mouseY > starter.stloc.y - 45) && (mouseY < starter.stloc.y + 4))) {
         fill(255, 255, 255, 30);
@@ -82,9 +85,6 @@ var playStart = function() { // starting screen has clouds and menus
         fill(255, 255, 255, 60);
         text("start", starter.stloc.x, starter.stloc.y);
     }
-	fill(0, 10, 0);
-	rect(0, high - 200, wide, 200);
-	arc(wide/2, high - 200, wide + 200, 200, PI, 2*PI);
 };
 
 mousePressed = function() {
