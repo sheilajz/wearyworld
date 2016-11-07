@@ -66,7 +66,7 @@ son.prototype.draw = function() {
     fill(14, 0, 41);
     pushMatrix();
     rotate(PI/10);
-    ellipse(this.pos.x + 85, this.pos.y + -62, 12, 15);
+    ellipse(this.pos.x + 125, this.pos.y + -102, 12, 15);
     popMatrix();
     stroke(14, 0, 41);
     strokeWeight(3);
@@ -78,7 +78,7 @@ son.prototype.draw = function() {
     line(this.pos.x, this.pos.y + 18, this.pos.x - 10, this.pos.y + 27);
     line(this.pos.x, this.pos.y + 18, this.pos.x + 10, this.pos.y + 27);
 };
-var myson = new son(wide/2, high - 100);
+var myson = new son(wide/2, high - 300);
 
 var playStart = function() { // starting screen has clouds and menus
     background(0, 0, 0);
