@@ -175,7 +175,7 @@ mousePressed = function() {
 mouseDragged = function() {
 	if (gamemode === "intro") {
 		if (intros.scrlact === 1) {
-		    if (((mouseY - pmouseY < 0) && (intros.scrollfact.y > 3)) || ((mouseY - pmouseY > 0) && (intros.scrollfact.y < high - (intros.pos.y + 127)))) {
+		    if (((mouseY - pmouseY < 0) && (intros.scrollfact.y > 4)) || ((mouseY - pmouseY > 0) && (intros.scrollfact.y < high - (intros.pos.y + 127)))) {
 			    intros.scrollfact.add(0, mouseY - pmouseY);
 		    }
 		}
