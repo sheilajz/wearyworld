@@ -148,24 +148,10 @@ infoscrn.prototype.draw() {
 	}
 };
 
-var introSeq = function() {
-    text(, 10, 40);
-    text(, 10, 80);
-    text(, 10, 120);
-    text(, 10, 160);
-    text(, 10, 200); 
-    text(, 10, 240); 
-    text(, 10, 280);
-    text(, 10, 320);
-    text(, 10, 360);
-    text(, 10, 400);
-    text(, 10, 440);
-    text(, 10, 480);
-    text(, 10, 520);
-    text(, 10, 560);
-	text(, 10, 560);
-};
 var intros = new infoscrn(20, 20);
+var introSeq = function() {
+	intros.draw();
+};
 
 mousePressed = function() {
     if (gamemode === "start") {
