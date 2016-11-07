@@ -109,25 +109,20 @@ var initSeq = function() {
 var introSeq = function() {
     background(22, 0, 84);
     textFont(font, 20);
-    text("Constant war, famine, and disease has created a barren land.", 10, 40);
-    text("Strange creatures began appearing around cities, pillaging and destroying.", 10, 80);
-    text("As the people could never know what tomorrow would bring, many desperates", 10, 120);
-    text("flocked to religion, including the church and various religious cults", 10, 160);
-    text("for the promise of miracles and salvation. As more died,", 10, 200);
-    text("the church grew into an ever-stronger, yet ever-more polarizing", 10, 240);
-    text("entity. It began to raise its own armies, monopolize resources,", 10, 280);
-    text("and even form its own states. In these trying times, leaders", 10, 320);
-    text("struggled to provide for their people, and with the church's", 10, 360);
-    text("power rising daily, they began to seek counsel from travelling advisors", 10, 400);
-    text("called Meyhers. These individuals studied many arts, and had the", 10, 440);
-    text("background suited to assist with a wide range of situations.", 10, 480);
-    text("You will play as one of these Meyhers, getting called to the aide of", 10, 520);
-    text("many rulers, community and company leaders, and even pastors.", 10, 560);
-    text("A desperate mother at a village you often visit has asked you to save", 10, 600);
-    text("her son. He is afflicted with a disease that no doctor in the village", 10, 640);
-    text("could diagnose, and was projected to soon die in the village. Though", 10, 700);
-    text("refusing at first, you eventually relent, and agree to bring him with you in your travels to show him different scenes and vistas before his time ends.", 10, 740);
-    text("The story begins here... Taking the boy under your care, you have adopted him as your son. His life and future has been entrusted to you. Every action you take will decide his future.", 10, 780);
+    text("Constant war, famine, and disease has created a barren land. Strange creatures began appearing around cities, pillaging", 10, 40);
+    text("and destroying. As the people could never know what tomorrow would bring, many desperates", 10, 80);
+    text("flocked to religion, including the church and various religious cults for the promise of miracles", 10, 120);
+    text("and salvation. As more died, the church grew into an ever-stronger, yet ever-more polarizing", 10, 160);
+    text("entity. It began to raise its own armies, monopolize resources, and even form its own states.", 10, 200);
+    text("In these trying times, leaders struggled to provide for their people, and with the", 10, 320);
+    text("church's power rising daily, began to seek counsel from travelling advisors known as Meyhers.", 10, 240);
+    text("These individuals studied many arts, and had the background suited to assist with", 10, 280);
+    text("a wide range of situations. You will play as one of these Meyhers, called", 10, 320);
+    text("to the aide of many rulers, community and company leaders, and even pastors. A desperate", 10, 360);
+    text("mother at a village you often visit has asked you to save her son. He is afflicted with", 10, 400);
+    text("a disease that no doctor in the village could diagnose, and was projected to soon die in the village. Though", 10, 440);
+    text("refusing at first, you eventually relent, and agree to bring him with you in your travels to show him different scenes and vistas before his time ends.", 10, 480);
+    text("The story begins here... Taking the boy under your care, you have adopted him as your son. His life and future has been entrusted to you. Every action you take will decide his future.", 10, 520);
 };
 
 mousePressed = function() {
