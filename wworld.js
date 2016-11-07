@@ -16,8 +16,8 @@ var cloudpatch = function(type, speed) { // create clouds of varying opacities, 
     }
     else {
         this.maxop = 85;
-        this.xnoise = 0.12;
-        this.ynoise = 0.17;
+        this.xnoise = 0.22;
+        this.ynoise = 0.27;
     }
     this.speed = speed;
     this.rnuma = 0;
