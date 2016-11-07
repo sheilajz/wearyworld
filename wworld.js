@@ -87,6 +87,10 @@ var playStart = function() { // starting screen has clouds and menus
     }
 };
 
+var initSeq = function() {
+	background(10, 10, 100);
+};
+
 mousePressed = function() {
     if (gamemode === "start") {
         if (((mouseX > starter.stloc.x) && (mouseX < starter.stloc.x + 150)) && ((mouseY > starter.stloc.y - 45) && (mouseY < starter.stloc.y + 4))) {
@@ -100,6 +104,9 @@ var update = function() {
         case "start":
             playStart();
             break;
+		case "init":
+			initSeq();
+			break;
         default:
             break;
     
