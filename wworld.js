@@ -44,7 +44,7 @@ var startScrn = function() { // start screen is full of shifting clouds
     this.frm = frameCount;
     this.clouds = [];
     this.init();
-    this.grower = 10;
+    this.grower = 20;
     this.boxw = 0;
     this.stloc = new PVector(200, 350);
     this.inloc = new PVector(200, 200);
