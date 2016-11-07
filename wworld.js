@@ -56,6 +56,30 @@ startScrn.prototype.init = function() { // add two layers of clouds to the start
 };
 var starter = new startScrn();
 
+
+var son = function(x, y) {
+    this.pos = new PVector(x, y);
+    
+};
+son.prototype.draw = function() {
+    noStroke();
+    fill(14, 0, 41);
+    pushMatrix();
+    rotate(PI/10);
+    ellipse(this.pos.x + 85, this.pos.y + -82, 12, 15);
+    popMatrix();
+    stroke(14, 0, 41);
+    strokeWeight(3);
+    line(this.pos.x, this.pos.y, this.pos.x, this.pos.y + 16);
+    line(this.pos.x, this.pos.y + 4, this.pos.x - 5, this.pos.y - 10);
+    line(this.pos.x, this.pos.y - 17, this.pos.x - 5, this.pos.y - 10);
+    line(this.pos.x, this.pos.y + 4, this.pos.x + 5, this.pos.y + 10);
+    line(this.pos.x + 9, this.pos.y + 7, this.pos.x + 5, this.pos.y + 10);
+    line(this.pos.x, this.pos.y + 18, this.pos.x - 10, this.pos.y + 27);
+    line(this.pos.x, this.pos.y + 18, this.pos.x + 10, this.pos.y + 27);
+};
+var myson = new son(wide/2, high - 100);
+
 var playStart = function() { // starting screen has clouds and menus
     background(0, 0, 0);
     noStroke();
@@ -104,6 +128,7 @@ var playStart = function() { // starting screen has clouds and menus
     }
     textFont(font, 15);
     text("Life simulation game by: Sheila Zhu", wide - 220, high - 10);
+	myson.draw();
 };
 
 var initSeq = function() {
@@ -175,8 +200,10 @@ mousePressed = function() {
 mouseDragged = function() {
 	if (gamemode === "intro") {
 		if (intros.scrlact === 1) {
-		    if (((mouseY - pmouseY < 0) && (intros.scrollfact.y > 4)) || ((mouseY - pmouseY > 0) && (intros.scrollfact.y < high - (intros.pos.y + 127)))) {
-			    intros.scrollfact.add(0, mouseY - pmouseY);
+		    if (((mouseY - pmouseY < 0) && (intros.scrollfact.y > 3)) || ((mouseY - pmouseY > 0) && (intros.scrollfact.y < high - (intros.pos.y + 127)))) {
+				if ((mouseY - pmouseY < -1) || (mouseY - pmouseY > 1)) {
+			        intros.scrollfact.add(0, mouseY - pmouseY);
+		        }
 		    }
 		}
 	}
