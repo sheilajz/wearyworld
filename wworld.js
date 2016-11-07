@@ -106,25 +106,66 @@ var initSeq = function() {
 	background(10, 10, 100);
 };
 
-var introSeq = function() {
-    background(22, 0, 84);
-    textFont(font, 20);
-    text("Constant war, famine, and disease has created a barren land. Strange creatures began appearing around", 10, 40);
-    text("cities, pillaging and destroying. As the people could never know what tomorrow would bring, many", 10, 80);
-    text("desperates flocked to religion, including the church and various religious cults for the promise of", 10, 120);
-    text("miracles and salvation. As more died, the church grew into an ever-stronger, yet ever-more polarizing", 10, 160);
-    text("entity. It began to raise its own armies, monopolize resources, and even form its own states.", 10, 200); 
-    text("In these trying times, leaders struggled to provide for their people, and with the church's power", 10, 320); 
-    text("rising daily, began to seek counsel from travelling advisors known as Meyhers.", 10, 240);
-    text("These individuals studied many arts, and had the background suited to assist with a wide range of", 10, 280);
-    text("situations. You will play as one of these Meyhers, called to the aide of rulers, community and ", 10, 320);
-    text("company leaders, and even pastors. A desperate mother at a village you often visit has asked you to", 10, 360);
-    text("save her son. He is afflicted with a disease that no doctor in the village could diagnose, and was", 10, 400);
-    text("projected to soon die in the village. Though at first unwilling, you eventually relent, and agree to", 10, 440);
-    text("bring him with you in your travels to show him different scenes and vistas before his time ends.", 10, 480);
-    text("The story begins here... Taking the boy under your care, you have adopted him as your son. His life", 10, 520);
-	text("and future has been entrusted to you. Every action you take will decide his future.", 10, 560);
+var infoscrn = function(x, y) {
+	this.pos = new PVector(x, y);
+	this.scrollfact = new PVector(0, 0);
+	this.scrlact = 0;
+	this.textarr = [];
+	this.textarr.push("Constant war, famine, and disease has created a barren land. Strange creatures began appearing around");
+	this.textarr.push("cities, pillaging and destroying. As the people could never know what tomorrow would bring, many");
+	this.textarr.push("desperates flocked to religion, including the church and various religious cults for the promise of");
+	this.textarr.push("miracles and salvation. As more died, the church grew into an ever-stronger, yet ever-more polarizing");
+	this.textarr.push("entity. It began to raise its own armies, monopolize resources, and even form its own states.");
+	this.textarr.push("In these trying times, leaders struggled to provide for their people, and with the church's power");
+	this.textarr.push("rising daily, began to seek counsel from travelling advisors known as Meyhers.");
+	this.textarr.push("These individuals studied many arts, and had the background suited to assist with a wide range of");
+	this.textarr.push("situations. You will play as one of these Meyhers, called to the aide of rulers, community and ");
+	this.textarr.push("company leaders, and even pastors. A desperate mother at a village you often visit has asked you to");
+	this.textarr.push("save her son. He is afflicted with a disease that no doctor in the village could diagnose, and was");
+	this.textarr.push("projected to soon die in the village. Though at first unwilling, you eventually relent, and agree to");
+	this.textarr.push("bring him with you in your travels to show him different scenes and vistas before his time ends.");
+	this.textarr.push("The story begins here... Taking the boy under your care, you have adopted him as your son. His life");
+	this.textarr.push("and future has been entrusted to you. Every action you take will decide his future.");
 };
+infoscrn.prototype.draw() {
+    background(22, 0, 84);
+	fill(105, 80, 194, 40);
+	rect(this.pos.x, this.pos.y, wide - 20 - this.pos.x, high - 20 - this.pos.y);
+	if (this.scrlact === 0) {
+		fill(22, 0, 84);
+	}
+	else {
+		fill(100, 80, 164);
+	}
+	rect(wide - this.pos.x - 10, this.scrollfact.y + 20, wide - this.pos.x, this.scrollfact.y + high - 50 - this.pos.y);
+	fill(255, 255, 255, 100);
+    textFont(font, 20);
+	for (var i = 0; i < this.textarr.length; ++i) {
+		var y = (i + 1)*40 - this.scrollfact.y;
+		if ((y > 25) && (y < high - 45)) {
+			text(this.textarr[i], this.pos.x + 10, this.pos.y + 10 + ((i + 1)*40 - this.scrollfact.y));
+		}
+	}
+};
+
+var introSeq = function() {
+    text(, 10, 40);
+    text(, 10, 80);
+    text(, 10, 120);
+    text(, 10, 160);
+    text(, 10, 200); 
+    text(, 10, 240); 
+    text(, 10, 280);
+    text(, 10, 320);
+    text(, 10, 360);
+    text(, 10, 400);
+    text(, 10, 440);
+    text(, 10, 480);
+    text(, 10, 520);
+    text(, 10, 560);
+	text(, 10, 560);
+};
+var intros = new infoscrn(20, 20);
 
 mousePressed = function() {
     if (gamemode === "start") {
@@ -135,6 +176,16 @@ mousePressed = function() {
 			gamemode = "intro";
 		}
     }
+	else if (gamemode === "intro") {
+		starter.scrlact = 1;
+	}
+};
+mousedragged = function() {
+	if (gamemode === "intro") {
+		if (((mouseX > wide - intros.pos.x - 10) && (mouseX < wide - intros.pos.x)) && ((mouseY > intros.scrollfact.y + 20) && (intros.scrollfact.y + high - 50 - this.pos.y))) {
+			intros.scrollfact.y = mouseY - intros.pos.y - 20;
+		}
+	}
 };
 
 var update = function() {
