@@ -45,9 +45,10 @@ var startScrn = function() { // start screen is full of shifting clouds
     this.clouds = [];
     this.init();
     this.grower = 20;
-    this.boxw = 0;
+    this.stboxw = 0;
+    this.inboxw = 0;
     this.stloc = new PVector(250, 450);
-    this.inloc = new PVector(200, 200);
+    this.inloc = new PVector(250, 500);
 };
 startScrn.prototype.init = function() { // add two layers of clouds to the starting screen
     this.clouds.push(new cloudpatch(0, 0.005));
@@ -72,18 +73,32 @@ var playStart = function() { // starting screen has clouds and menus
 	arc(wide/2, high - 200, wide + 200, 200, PI, 2*PI);
     textFont(font, 75);
     if (((mouseX > starter.stloc.x) && (mouseX < starter.stloc.x + 150)) && ((mouseY > starter.stloc.y - 45) && (mouseY < starter.stloc.y + 4))) {
-        fill(255, 255, 255, 30);
-        rect(0, starter.stloc.y - 50, starter.boxw, 60);
+        fill(255, 255, 255, 50);
+        rect(0, starter.stloc.y - 50, starter.stboxw, 60);
         fill(255, 255, 255, 60);
         text("start", starter.stloc.x, starter.stloc.y);
-        if (starter.boxw < starter.stloc.x + 160) {
-            starter.boxw += starter.grower;
+        if (starter.stboxw < starter.stloc.x + 160) {
+            starter.stboxw += starter.grower;
         }
     }
     else {
-        starter.boxw = 0;
+        starter.stboxw = 0;
         fill(255, 255, 255, 60);
         text("start", starter.stloc.x, starter.stloc.y);
+    }
+    if (((mouseX > starter.inloc.x) && (mouseX < starter.inloc.x + 150)) && ((mouseY > starter.inloc.y - 45) && (mouseY < starter.inloc.y + 4))) {
+        fill(255, 255, 255, 50);
+        rect(wide - starter.inboxw, starter.inloc.y - 53, starter.inboxw, 60);
+        fill(255, 255, 255, 60);
+        text("intro", starter.inloc.x, starter.inloc.y);
+        if (starter.inboxw < starter.stloc.x + 10) {
+            starter.inboxw += starter.grower;
+        }
+    }
+    else {
+        starter.inboxw = 0;
+        fill(255, 255, 255, 60);
+        text("intro", starter.inloc.x, starter.inloc.y);
     }
 };
 
