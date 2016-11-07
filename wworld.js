@@ -11,13 +11,13 @@ size(wide, high);
 var cloudpatch = function(type, speed) { // create clouds of varying opacities, levels of noise, and movement speeds
     if (type === "a") {
         this.maxop = 205;
-        this.xnoise = 0.14;
-        this.ynoise = 0.19;
+        this.xnoise = 0.06;
+        this.ynoise = 0.09;
     }
     else {
         this.maxop = 85;
-        this.xnoise = 0.15;
-        this.ynoise = 0.2;
+        this.xnoise = 0.12;
+        this.ynoise = 0.17;
     }
     this.speed = speed;
     this.rnuma = 0;
