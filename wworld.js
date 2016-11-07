@@ -127,7 +127,7 @@ var infoscrn = function(x, y) {
 	this.textarr.push("The story begins here... Taking the boy under your care, you have adopted him as your son. His life");
 	this.textarr.push("and future has been entrusted to you. Every action you take will decide his future.");
 };
-infoscrn.prototype.draw() {
+infoscrn.prototype.draw = function() {
     background(22, 0, 84);
 	fill(105, 80, 194, 40);
 	rect(this.pos.x, this.pos.y, wide - 20 - this.pos.x, high - 20 - this.pos.y);
@@ -137,7 +137,7 @@ infoscrn.prototype.draw() {
 	else {
 		fill(100, 80, 164);
 	}
-	rect(wide - this.pos.x - 10, this.scrollfact.y + 20, wide - this.pos.x, this.scrollfact.y + high - 50 - this.pos.y);
+	rect(wide - this.pos.x - 12, this.scrollfact.y + this.pos.y + 2, 10, 100);
 	fill(255, 255, 255, 100);
     textFont(font, 20);
 	for (var i = 0; i < this.textarr.length; ++i) {
@@ -163,15 +163,29 @@ mousePressed = function() {
 		}
     }
 	else if (gamemode === "intro") {
-		starter.scrlact = 1;
+	    if (((mouseX > wide - intros.pos.x - 12) && (mouseX < wide - intros.pos.x - 2)) && ((mouseY > (intros.scrollfact.y + intros.pos.y + 2)) && (mouseY < (intros.scrollfact.y + intros.pos.y + 102)))) {
+		    intros.scrlact = 1;
+	    }
 	}
 };
-mousedragged = function() {
+mouseDragged = function() {
 	if (gamemode === "intro") {
-		if (((mouseX > wide - intros.pos.x - 10) && (mouseX < wide - intros.pos.x)) && ((mouseY > intros.scrollfact.y + 20) && (intros.scrollfact.y + high - 50 - this.pos.y))) {
-			intros.scrollfact.y = mouseY - intros.pos.y - 20;
+		if (intros.scrlact === 1) {
+		    if (((mouseY - pmouseY < 0) && (intros.scrollfact.y > 3)) || ((mouseY - pmouseY > 0) && (intros.scrollfact.y < high - (intros.pos.y + 127)))) {
+			    intros.scrollfact.add(0, mouseY - pmouseY);
+		    }
 		}
 	}
+};
+mouseReleased = function() {
+    if (gamemode === "intro") {
+        intros.scrlact = 0;
+    }
+};
+mouseOut = function() {
+    if (gamemode === "intro") {
+        intros.scrlact = 0;
+    }
 };
 
 var update = function() {
