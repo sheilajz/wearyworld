@@ -66,7 +66,7 @@ son.prototype.draw = function() {
     fill(14, 0, 41);
     pushMatrix();
     rotate(PI/10);
-    ellipse(this.pos.x + 105, this.pos.y + -142, 12, 15);
+    ellipse(this.pos.x + 125, this.pos.y + -142, 12, 15);
     popMatrix();
     stroke(14, 0, 41);
     strokeWeight(3);
