@@ -28,7 +28,7 @@ cloudpatch.prototype.draw = function() { // draw perlin noise clouds
     var n1 = rnum;
     for (var x = 0; x <= wide; x += 6) {        
         var n2 = this.rnuma;
-        for (var y = 0; y <= high; y += 6) {    
+        for (var y = 0; y <= high - 200; y += 6) {    
             var c = map(noise(n1,n2), 0, 1, 0, this.maxop);           
             fill(220, 220, 220, c);            
             rect(x,y,6,6);          
