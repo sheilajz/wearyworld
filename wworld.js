@@ -82,6 +82,9 @@ var playStart = function() { // starting screen has clouds and menus
         fill(255, 255, 255, 60);
         text("start", starter.stloc.x, starter.stloc.y);
     }
+	fill(0, 0, 0);
+	rect(0, 0, wide, high);
+	arc(wide/2, high - 200, wide + 100, 100, PI, 2*PI);
 };
 
 mousePressed = function() {
