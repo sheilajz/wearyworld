@@ -46,7 +46,7 @@ var startScrn = function() { // start screen is full of shifting clouds
     this.init();
     this.grower = 20;
     this.boxw = 0;
-    this.stloc = new PVector(200, 350);
+    this.stloc = new PVector(250, 450);
     this.inloc = new PVector(200, 200);
 };
 startScrn.prototype.init = function() { // add two layers of clouds to the starting screen
