@@ -109,12 +109,12 @@ var initSeq = function() {
 var introSeq = function() {
     background(22, 0, 84);
     textFont(font, 20);
-    text("Constant war, famine, and disease has created a barren land. Strange creatures began appearing around cities, pillaging", 10, 40);
+    /*text("Constant war, famine, and disease has created a barren land. Strange creatures began appearing around cities, pillaging", 10, 40);
     text("and destroying. As the people could never know what tomorrow would bring, many desperates", 10, 80);
     text("flocked to religion, including the church and various religious cults for the promise of miracles", 10, 120);
     text("and salvation. As more died, the church grew into an ever-stronger, yet ever-more polarizing", 10, 160);
-    text("entity. It began to raise its own armies, monopolize resources, and even form its own states.", 10, 200);
-    text("In these trying times, leaders struggled to provide for their people, and with the", 10, 320);
+    text("entity. It began to raise its own armies, monopolize resources, and even form its own states.", 10, 200); */
+    text("In these trying times, leaders struggled to provide for their people, and with the", 10, 320); /*
     text("church's power rising daily, began to seek counsel from travelling advisors known as Meyhers.", 10, 240);
     text("These individuals studied many arts, and had the background suited to assist with", 10, 280);
     text("a wide range of situations. You will play as one of these Meyhers, called", 10, 320);
@@ -122,7 +122,7 @@ var introSeq = function() {
     text("mother at a village you often visit has asked you to save her son. He is afflicted with", 10, 400);
     text("a disease that no doctor in the village could diagnose, and was projected to soon die in the village. Though", 10, 440);
     text("refusing at first, you eventually relent, and agree to bring him with you in your travels to show him different scenes and vistas before his time ends.", 10, 480);
-    text("The story begins here... Taking the boy under your care, you have adopted him as your son. His life and future has been entrusted to you. Every action you take will decide his future.", 10, 520);
+    text("The story begins here... Taking the boy under your care, you have adopted him as your son. His life and future has been entrusted to you. Every action you take will decide his future.", 10, 520);*/
 };
 
 mousePressed = function() {
