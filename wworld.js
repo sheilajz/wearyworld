@@ -72,6 +72,8 @@ var playStart = function() { // starting screen has clouds and menus
 	rect(0, high - 200, wide, 200);
 	arc(wide/2, high - 200, wide + 200, 200, PI, 2*PI);
     textFont(font, 75);
+    fill(255, 255, 255, 150);
+    text("A Weary World", 100, 100);
     if (((mouseX > starter.stloc.x) && (mouseX < starter.stloc.x + 150)) && ((mouseY > starter.stloc.y - 45) && (mouseY < starter.stloc.y + 4))) {
         fill(255, 255, 255, 50);
         rect(0, starter.stloc.y - 50, starter.stboxw, 60);
@@ -100,6 +102,8 @@ var playStart = function() { // starting screen has clouds and menus
         fill(255, 255, 255, 60);
         text("intro", starter.inloc.x, starter.inloc.y);
     }
+    textFont(font, 15);
+    text("Life simulation game by: Sheila Zhu", wide - 220, high - 10);
 };
 
 var initSeq = function() {
